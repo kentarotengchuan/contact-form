@@ -12,15 +12,13 @@ use App\Http\Controllers\ContactController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get("/","index")->name("index");
-Route::post("/","store")->name("store");
-Route::get("/confirm","confirm")->name("confirm");
-Route::post("/confirm","regist")->name("regist");
-Route::get("/thanks","thanks")->name("thanks");
-Route::post("/thanks","redirect")->name("redirect");
+Route::get("/",[ContactController::class,"index"])->name("index");
+Route::post("/",[ContactController::class,"store"])->name("store");
+Route::post("/confirm",[ContactController::class,"regist"])->name("regist");
+Route::post("/thanks",[ContactController::class,"redirect"])->name("redirect");
 
 Route::middleware('auth')
-->controller(ContactController::class)
 ->group(function(){
-    Route::get("/admin","admin")->name("admin");
+    Route::get("/admin",[ContactController::class,"admin"])->name("admin");
+    Route::post("/admin",[ContactController::class,"search"])->name("search");
 });

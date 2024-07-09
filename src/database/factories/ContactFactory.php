@@ -17,12 +17,12 @@ class ContactFactory extends Factory
             "category_id"=>$this->faker->numberBetween(1,5),
             "first_name"=>$this->faker->firstName(),
             "last_name"=>$this->faker->lastName(),
-            "gender"=>rand(1,3),
+            "gender"=>$this->faker->numberBetween(1,3),
             "email"=>$this->faker->safeEmail(),
             "tell"=>$this->faker->phoneNumber(),
-            "address"=>$this->faker->address(),
-            "building"=>,
-            "detail"=>,
+            "address"=>$this->faker->prefecture().$this->faker->city().$this->faker->streetAddress(),
+            "building"=>$this->faker->secondaryAddress(),
+            "detail"=>$this->faker->realText(120),
         ];
     }
 }
