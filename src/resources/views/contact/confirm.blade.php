@@ -95,8 +95,9 @@
                     <input type="hidden" name="category_id" value={{$contact["category_id"]}}>
                     <input type="hidden" name="detail" value="{{$contact["detail"]}}">
                     <button type="submit" class="confirm-form__button">送信</button>
+                    <button type="submit" class="redirect__button" name="back" value="yes">修正</button>
                 </form>
-                <a href="" onclick="history.back()">修正</a>
+                
             </div>
         </div>
     </main>

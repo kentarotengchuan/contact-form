@@ -12,7 +12,8 @@
     <header class="header">
         <div class="header__inner">
             <p class="header__ttl">FashionablyLate</p>
-            <form action="{{route('logout')}}" class="logout-form" method="post">
+            <form action="/logout" class="logout-form" method="post">
+            @csrf
                 <button type="submit" class="logout-form__button">logout</button>
             </form>
         </div>
@@ -20,10 +21,11 @@
     <main>
         <div class="content">
             <h2 class="content__ttl">Admin</h2>
-            <form action="{{route('search')}}" method="post" class="search-form">
+            <form action="{{route('search')}}" method="get" class="search-form">
             @csrf
-                <input type="text" name="text" placeholder="名前やメールアドレスを入力してください">
+                <input type="text" name="text" placeholder="名前やメールアドレスを入力してください" value="{{old('text')}}">
                 <select name="gender">
+                    <option value=null selected>性別</option>
                     <option value=1>1:男性</option>
                     <option value=2>2:女性</option>
                     <option value=3>3:その他</option>
@@ -35,13 +37,13 @@
                     <option value=4>4. ショップへのお問い合わせ</option>
                     <option value=5>5. その他</option>
                 </select>
-                <input type="date" name="date">
+                <input type="date" name="date" value=null>
                 <button type="submit" class="search-form__button">検索</button>
-                <button type="reset" class="search-form__button search-form__button--pale">リセット</button>
+                <button type="submit" name="reset" value="yes" class="search-form__button search-form__button--pale">リセット</button>
             </form>
             <div class="export-paginate-area">
                 <button class=export-form__button>エクスポート</button>
-                <div class="page-switch-form"></div>
+                <div class="page-switch-form">{{$contacts->appends(request()->query())->links()}}</div>
             </div>
             <table class="contact-table">
                 <tr class="contact-table__head">
@@ -54,7 +56,7 @@
                 <tr class="contact-table__content">
                     <td>{{$contact->last_name}}&emsp;{{$contact->first_name}}</td>
                     <td>
-                    @switch($content->gender)
+                    @switch($contact->gender)
                         @case(1)
                             男性
                             @break

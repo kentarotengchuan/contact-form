@@ -17,7 +17,7 @@
     <main>
         <div class="content">
             <h2 class="content__ttl">Contact</h2>
-                <form action="/" class="store-form" method="post">
+                <form action="/confirm" class="store-form" method="post">
                     @csrf
                     <div class="flex">
                         <p class="store-form__head" style="width:33%">お名前<span class="red">※</span></p>
@@ -25,6 +25,16 @@
                             <input type="text" name="last_name" placeholder="例:山田" value="{{old('last_name')}}">
                             <input type="text" name="first_name" placeholder="例:太郎" value="{{old('first_name')}}">
                         </div>
+                        @error('first_name')
+                        <div class="error-messages" style="width:100%">
+                            {{$errors->first('first_name')}}
+                        </div>
+                        @enderror
+                        @error('last_name')
+                        <div class="error-messages" style="width:100%">
+                            {{$errors->first('last_name')}}
+                        </div>
+                        @enderror
                     </div>
                     <div class="flex">
                         <p class="store-form__head">性別<span class="red">※</span></p>
@@ -36,12 +46,24 @@
                             <input type="radio" name="gender" id="gender-input" value=3 @if(old('gender')==3)checked @endif>
                             <label for="gender-input">その他</label>
                         </div>
+                        @error('gender')
+                        <div class="error-messages" style="width:100%">
+                            {{$errors->first('gender')}}
+                        </div>
+                        @enderror
                     </div>
                     <div class="flex">
                         <p class="store-form__head">メールアドレス<span class="red">※</span></p>
                         <div class="store-form__input">
                             <input type="email" name="email" placeholder="例:test@example.com" value="{{old('email')}}">
                         </div>
+                        @error('email')
+                        @foreach($errors->get('email') as $error)
+                        <div class="error-messages" style="width:100%">
+                            {{$error}}
+                        </div>
+                        @endforeach
+                        @enderror
                     </div>
                     <div class="flex">
                         <p class="store-form__head">電話番号<span class="red">※</span></p>
@@ -52,12 +74,40 @@
                             <div class="hyphen">-</div>
                             <input type="text" name="third_tell" value="{{old('third_tell')}}">
                         </div>
+                        @error('first_tell')
+                        <div class="error-messages-tell" style="width:30% margin-right:5%">
+                        @foreach($errors->get('first_tell') as $error)
+                            <p>{{$error}}</p>
+                        @endforeach
+                        </div>
+                        @enderror
+                        @error('second_tell')
+                        <div class="error-messages-tell" style="width:30% margin-right:5%">
+                            @foreach($errors->get('second_tell') as $error)
+                            <p>{{$error}}</p>
+                            @endforeach
+                        </div>
+                        @enderror
+                        @error('third_tell')
+                        <div class="error-messages-tell" style="width:30%">
+                            @foreach($errors->get('third_tell') as $error)
+                            <p>{{$error}}</p>
+                            @endforeach
+                        </div>
+                        @enderror
                     </div>
                     <div class="flex">
                         <p class="store-form__head">住所<span class="red">※</span></p>
                         <div class="store-form__input">
                             <input type="text" name="address" placeholder="例:東京都渋谷区千駄ヶ谷1-2-3" value="{{old('address')}}">
                         </div>
+                        @error('address')
+                        @foreach($errors->get('address') as $error)
+                        <div class="error-messages" style="width:100%">
+                            {{$error}}
+                        </div>
+                        @endforeach
+                        @enderror
                     </div>
                     <div class="flex">
                         <p class="store-form__head">建物名</p>
@@ -76,12 +126,26 @@
                                 <option value=5 @if(old('category_id')==5)selected @endif>5. その他</option>
                             </select>
                         </div>
+                        @error('category_id')
+                        @foreach($errors->get('category_id') as $error)
+                        <div class="error-messages" style="width:100%">
+                            {{$error}}
+                        </div>
+                        @endforeach
+                        @enderror
                     </div>
                     <div class="flex">
                         <p class="store-form__head">お問い合わせ内容<span class="red">※</span></p>
                         <div class="store-form__input">
                             <textarea name="detail" cols="30" rows="10" placeholder="お問い合わせ内容をご記載ください">{{old('detail')}}</textarea>
                         </div>
+                        @error('detail')
+                        @foreach($errors->get('detail') as $error)
+                        <div class="error-messages" style="width:100%">
+                            {{$error}}
+                        </div>
+                        @endforeach
+                        @enderror
                     </div>
                     <button type="submit" class="strore-form__button">確認画面</button>
                 </form>

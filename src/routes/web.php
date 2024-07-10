@@ -13,12 +13,12 @@ use App\Http\Controllers\ContactController;
 |
 */
 Route::get("/",[ContactController::class,"index"])->name("index");
-Route::post("/",[ContactController::class,"store"])->name("store");
-Route::post("/confirm",[ContactController::class,"regist"])->name("regist");
-Route::post("/thanks",[ContactController::class,"redirect"])->name("redirect");
+Route::post("/confirm",[ContactController::class,"store"])->name("store");
+Route::post("/thanks",[ContactController::class,"regist"])->name("regist");
+Route::post("/",[ContactController::class,"redirect"])->name("redirect");
 
 Route::middleware('auth')
 ->group(function(){
     Route::get("/admin",[ContactController::class,"admin"])->name("admin");
-    Route::post("/admin",[ContactController::class,"search"])->name("search");
+    Route::get("/admin/search",[ContactController::class,"search"])->name("search");
 });

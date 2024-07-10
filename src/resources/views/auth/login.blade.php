@@ -12,7 +12,7 @@
     <header class="header">
         <div class="header__inner">
             <p class="header__ttl">FashionablyLate</p>
-            <form action="{{route('register')}}" class="register-form" method="get">
+            <form action="/register" class="register-form" method="get">
                 <button type="submit" class="register-form__button">register</button>
             </form>
         </div>
@@ -25,9 +25,19 @@
                     @csrf
                     <label for="email-input">メールアドレス</label>
                     <input type="email" name="email" id="email-input" placeholder="例:test@example.com">
+                    @error('email')
+                    <div class="error-messages">
+                        {{$errors->first('email')}}
+                    </div>
+                    @enderror
                     <label for="password-input">パスワード</label>
-                    <input type="password" name="password" id="password-input" placeholder="例:coachtech1106"> <button
-                        type="submit" class="login-form__button">ログイン</button>
+                    <input type="password" name="password" id="password-input" placeholder="例:coachtech1106">
+                    @error('password')
+                    <div class="error-messages" style="width:100%">
+                        {{$errors->first('password')}}
+                    </div>
+                    @enderror
+                    <button type="submit" class="login-form__button">ログイン</button>
                 </form>
             </div>
         </div>
