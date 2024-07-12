@@ -1,0 +1,84 @@
+.ibm-plex-serif-medium {
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.body {
+    background-color: #FFFF;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 24px;
+    color: #8A7868;
+}
+
+.header {
+    background-color: #FFFF;
+    border: solid 1px#E9E8E8;
+}
+
+.header__inner {
+    padding: 32px 0;
+    text-align: center;
+}
+
+.header__ttl {
+    font-size: 36px;
+    font-weight: normal;
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.content {
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.content__ttl {
+    font-size: 32px;
+    margin: 64px 0;
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.confirm-table{
+    margin:0 auto;
+    width:80%;
+    border:solid 1px #F1F0F0;
+    border-collapse: collapse;
+}
+th{
+    padding: 18px 48px;
+    color:#FFFF;
+    background-color: #BAA899;
+    border: solid 1px #F1F0F0;
+    font-weight: lighter;
+}
+td{
+    padding: 18px 42px;
+    color: #8A7868;
+    background-color: #FFFF;
+    border: solid 1px #F1F0F0;
+    text-align: left;
+    font-family: "IBM Plex Serif", serif;
+        font-weight: 500;
+        font-style: normal;
+}
+.buttons{
+    margin:48px;
+}
+.confirm-form__button{
+    padding:12px 48px;
+    background-color: #8A7868;
+    color: #FFFF; 
+    border-radius: 1%;
+}
+.redirect__button{
+    padding:12px 48px;
+    border: none;
+    color:#8A7868;
+    text-decoration: underline;
+    text-decoration-color: #8A7868;
+}

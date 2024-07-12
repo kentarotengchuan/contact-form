@@ -15,10 +15,12 @@ use App\Http\Controllers\ContactController;
 Route::get("/",[ContactController::class,"index"])->name("index");
 Route::post("/confirm",[ContactController::class,"store"])->name("store");
 Route::post("/thanks",[ContactController::class,"regist"])->name("regist");
-Route::post("/",[ContactController::class,"redirect"])->name("redirect");
 
 Route::middleware('auth')
 ->group(function(){
     Route::get("/admin",[ContactController::class,"admin"])->name("admin");
+    Route::get("/admin/reset",[ContactController::class,"reset"])->name("reset");
     Route::get("/admin/search",[ContactController::class,"search"])->name("search");
+    Route::delete("/admin/delete/{id}",[ContactController::class,"destroy"])->name("destroy");
+    Route::post("/admin",[ContactController::class,"export"])->name("export");
 });

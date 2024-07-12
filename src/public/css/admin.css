@@ -1,0 +1,242 @@
+.ibm-plex-serif-medium {
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.body {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color: #8A7868;
+}
+
+.header {
+    background-color: white;
+    border: solid 1px #F1ECE6;
+}
+
+.header__inner {
+    padding: 32px 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.header__ttl {
+    font-size: 36px;
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.logout-form {
+    position: absolute;
+    right: 96px;
+}
+
+.logout-form__button {
+    padding: 0 18px;
+    border: solid 1px#E5D8CA;
+    color: #E5D8CA;
+}
+.content {
+    text-align: center;
+    width:80%;
+    margin:0 auto;
+}
+
+.content__ttl {
+    font-size: 32px;
+    margin-top: 32px;
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.search-form{
+    margin-top:32px;
+    display: flex;
+    justify-content: center;
+    width:100%;
+}
+.search-form>*{
+    font-size: 18px;
+    height:42px;
+    background-color: #F4F4F4;
+    color: #8A7868;
+    border:solid 1px #E7E3DF;
+    margin-right: 2%;
+}
+.text-form{
+    width:30%;
+}
+select{
+    -webkit-appearance: none;
+    appearance: none;
+}
+.select-wrapper {
+    width:10%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.select-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    right: 8px;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+    border-top: 12px solid #E0DFDE;
+    border-bottom: 0;
+}
+.gender-form{
+    width:100%;
+}
+.category{
+    width:20%;
+}
+.category-form{
+    width:100%;
+}
+.date-form{
+    width:15%;
+}
+.search-form__button{
+    width:7.5%;
+    background-color: #8A7868;
+    color: #FFFF;
+}
+.search-form__button--pale{
+    margin-right: 0;
+    background-color: #D9C6B5;
+}
+.export-paginate-area{
+    margin-top:32px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.export-form__button{
+    background-color: #F4F4F4;
+    border: solid 1px #F1ECE6;
+    padding:8px 24px;
+}
+.pagination{
+    display:flex;
+    align-items: center;
+    border: solid 1px #E7E3DF;
+    border-radius: 5%;
+}
+.pagination>li{
+    font-size: 12px;
+    border: solid 1px #E7E3DF;
+    border-collapse: collapse;
+    width:24px;
+}
+.contact-table {
+    margin: 32px 0;
+    width: 100%;
+    border: solid 1px #F1F0F0;
+    border-collapse: collapse;
+}
+.contact-table__head > th {
+    padding: 18px 48px;
+    color: #FFFF;
+    background-color: #8A7868;
+    border: solid 1px #F1F0F0;
+    font-weight: lighter;
+    vertical-align: middle;
+}
+.contact-table__content > td {
+    padding: 18px 42px;
+    color: #8A7868;
+    background-color: #FFFF;
+    border: solid 1px #F1F0F0;
+    text-align: left;
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 500;
+    font-style: normal;
+    vertical-align: middle;
+}
+.detail__button{
+    padding: 4px 18px;
+    border: solid 1px#E5D8CA;
+    color: #E5D8CA;
+    vertical-align: middle;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+    background-color: #FFFF;
+    margin:100px auto;
+    width: 50%;
+    animation-name: modalopen;
+    animation-duration: 1s;
+}
+@keyframes modalopen {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+.modal-header {
+    padding:5px;
+    text-align: right;
+    margin-bottom:60px;
+}
+.close{
+    height:20px;
+}
+.close>span{
+    border: solid 1px#8A7868;
+    border-radius: 50%;
+    display: inline-block;
+    width:20px;
+    height:20px;
+    line-height: 20px;
+    text-align: center; 
+}
+.modal-body{
+    width:80%;
+    margin:0 auto;
+}
+.modal-table{
+    border:none;
+}
+.modal-table tr{
+    color: #8A7868;
+}
+.modal-table th{
+    width:33%;
+    padding-bottom: 24px;
+}
+.modal-table td{
+    width:66%;
+    padding-bottom: 24px;
+}
+.modal-footer{
+    display: flex;
+    justify-content: center;
+}
+.delete__button{
+    padding:4px 12px;
+    background-color: #BA370D;
+    color: #FFFF;
+    border-radius: 1%;
+    margin: 72px 0 32px;
+}
