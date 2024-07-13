@@ -18,3 +18,7 @@ Laravel環境構築
     ・PHP 8.0
     ・Laravel Framework 8.83.27
     ・MySQL 8.0.26
+
+URL
+    ・開発環境: http://localhost/
+    ・phpMyAdmin: http://localhost:8080/
